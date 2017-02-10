@@ -1,3 +1,8 @@
 module Players.Messages exposing (..)
 
-type Msg = NoOp
+import Http
+import Players.Models exposing (PlayerId, Player)
+
+type Msg =
+    OnFetchAll (Result Http.Error (List Player))
+
